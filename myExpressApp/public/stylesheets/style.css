@@ -1,0 +1,32 @@
+body {
+  background-color: rgb(252, 238, 221);
+  padding: 50px;
+  text-align: center;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: rgb(14, 23, 104);
+}
+
+a {
+  color: #32b4d4;
+}
+
+th {
+  background-color: rgb(163, 38, 38,0.3);
+  width: 200px;
+  border: 1px solid purple;
+  height: 20px; 
+  padding: 1em;
+}
+
+td {
+  background-color: rgb(163, 157, 157,0.3);
+  border: 1px solid rgb(48, 46, 18);
+  width: 200px;
+  padding: 1em;
+}
+
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}

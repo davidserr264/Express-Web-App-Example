@@ -1,0 +1,56 @@
+extends layout
+
+block content
+  html
+    head
+      script
+        |
+        | function confirmDelete() {
+        | var txt;
+        |if (confirm("Are you sure you want to delete this entry?")) {
+        |    txt = "The entry will be deleted";
+        |     return true;
+        | } else {
+        |     txt = "The entry will not be deleted";
+        |    return false;
+        | }
+        | }
+        
+    body
+      h1="Welcome to David Serra's Final Project"
+      p Put yourself down in the database!
+      form(action="/", method = "POST")
+        p
+          | <strong>ID: </strong>
+          input(name="lead_id", type="number", placeholder="Enter your ID")
+          | <br><br>
+          | <strong>Name: </strong>
+          input(name="lead_name", type="name", placeholder="Enter your First name")
+          | <br><br>
+          | <strong>Email: </strong>
+          input(name="lead_email", type="email", placeholder="Enter your Email")
+          | <br><br>
+          button(type="submit") Submit me
+      br
+      if leads
+        h1 Leads
+          table(class="center")
+            tr
+              th ID
+              th Email
+              th Name
+              th Edit
+              th Delete
+          table
+        for lead in leads
+          table(class="center")
+            tr(id=lead.id)
+              td <span> #{lead.id}</span>
+              td <span> #{lead.email}</span>
+              td <span> #{lead.name}</span>
+              td
+                a(href="/lead/" + lead.id) Details
+              td
+                form(action="/lead/" + lead.id + "/delete", method="POST")
+                  button(id="delete" type="submit" onclick="return confirmDelete();").btn.btn-primary Delete
+

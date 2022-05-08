@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+    h1 Lead Edit
+    form(action="/lead/" + lead.id + "/edit", method = "POST")
+        p
+          | <strong>ID: </strong>
+          input(name="lead_id", type="number", value=lead.id)
+          | <br><br>
+          | <strong>Name: </strong>
+          input(name="lead_name", type="name", value=lead.name)
+          | <br><br>
+          | <strong>Email: </strong>
+          input(name="lead_email", type="email", value=lead.email)
+          | <br><br>
+          button(type="submit") Submit me
